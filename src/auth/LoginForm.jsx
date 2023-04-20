@@ -1,7 +1,7 @@
 import { Formik, useFormik } from 'formik'
 import React from 'react'
 
-function LoginForm() {
+function LoginForm({onLogin}) {
     const formik = useFormik({
 initialValues: {
     email: '',
@@ -9,6 +9,7 @@ initialValues: {
 },
 onSubmit:(values)=> {
     console.log(values);
+    onLogin(values)
 }
 
     })
