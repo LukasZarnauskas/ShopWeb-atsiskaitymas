@@ -9,10 +9,11 @@ function App() {
     <div>
     <h1>Shop project</h1>
     <Routes>
+<Route path="/" element={<LoginPage/>} />
 <Route path="/login" element={<LoginPage/>} />
 <Route path="/register" element={<RegisterPage />} />
 <Route path="/shops" element={<ShopsPage />} />
-<Route path="/Add" element={<AddShopPage />} />
+<Route path="/add" element={<AddShopPage />} />
   </Routes>
     </div>
   )
