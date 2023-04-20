@@ -2,9 +2,11 @@ import React from 'react'
 import LoginForm from '../auth/LoginForm'
 import { auth } from '../firebase/firebase';
 import {signInWithEmailAndPassword } from "firebase/auth";
+import { useAuthCtx } from '../store/AuthProvider';
 
 function LoginPage() {
 
+const {login} = useAuthCtx()
 
 function userLoginFire({email, password}){
   signInWithEmailAndPassword(auth, email, password)
@@ -13,6 +15,7 @@ function userLoginFire({email, password}){
       const user = userCredential.user;
       // ...
       console.log('pavyko', user);
+      login(user)
     })
     .catch((error) => {
       const errorCode = error.code;
