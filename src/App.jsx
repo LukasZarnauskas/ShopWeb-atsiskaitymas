@@ -8,6 +8,7 @@ import AddShopPage from "./pages/AddShopPage"
 import Header from "./components/layout/Header"
 import HomePage from './pages/HomePage'
 
+
 function App() {
   return (
     <div>
