@@ -3,6 +3,7 @@ import LoginForm from '../auth/LoginForm'
 import { auth } from '../firebase/firebase';
 import {signInWithEmailAndPassword } from "firebase/auth";
 import { useAuthCtx } from '../store/AuthProvider';
+import { Navigate } from 'react-router-dom';
 
 function LoginPage() {
 
@@ -16,7 +17,9 @@ function userLoginFire({email, password}){
       // ...
       console.log('pavyko', user);
       login(user)
+      console.log(user);
       ui.showSuccess()
+      Navigate('/shops')
     })
     .catch((error) => {
       const errorCode = error.code;
