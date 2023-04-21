@@ -1,4 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { createContext, useContext, useEffect, useState } from "react";
+import { auth } from "../firebase/firebase";
 
 const AuthContext = createContext({
     user: {},
@@ -6,6 +8,12 @@ const AuthContext = createContext({
     login() {},
     logout() {},
     register() {},
+    notice:{
+      show: false,
+      msg: '',
+      type: '',
+    },
+    ui: {},
 })
 
 
@@ -15,9 +23,44 @@ const AuthContext = createContext({
 function AuthProvider({ children }) {
 const [user, setUser] = useState({})
 const [isLoading, setIsLoading] = useState(false)
+const [notice, setNotice] = useState({
+    show: false,
+    msg: '',
+    type: '',
+})
+
+useEffect(() => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      
+      const uid = user.uid;
+      
+      console.log('prisijungimas', user.email);
+      setUser(user);
+      setNotice({
+        show: true,
+        msg: 'User logged in',
+        type: 'success',
+      });
+    } else {
+      console.log('Logout User');
+      setUser(null);
+    }
+  });
+}, []);
 
 const isLoggedIn = !!user;
 
+const ui = {
+    showSuccess() {
+      setNotice({
+        show: true,
+        msg: 'Success',
+        type: 'success',
+      });
+    },
+  
+  };
 
 function login(userObj) {
 setUser(userObj)
@@ -31,7 +74,9 @@ user,
 isLoading,
 login,
 isLoggedIn,
-logout
+logout,
+notice,
+ui,
 }
 
 

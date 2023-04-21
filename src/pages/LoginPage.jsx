@@ -6,7 +6,7 @@ import { useAuthCtx } from '../store/AuthProvider';
 
 function LoginPage() {
 
-const {login} = useAuthCtx()
+const {login, ui} = useAuthCtx()
 
 function userLoginFire({email, password}){
   signInWithEmailAndPassword(auth, email, password)
@@ -16,6 +16,7 @@ function userLoginFire({email, password}){
       // ...
       console.log('pavyko', user);
       login(user)
+      ui.showSuccess()
     })
     .catch((error) => {
       const errorCode = error.code;
