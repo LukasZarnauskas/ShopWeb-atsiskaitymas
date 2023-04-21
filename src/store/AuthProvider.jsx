@@ -22,7 +22,6 @@ const AuthContext = createContext({
 
 function AuthProvider({ children }) {
 const [user, setUser] = useState({})
-const [isLoading, setIsLoading] = useState(false)
 const [notice, setNotice] = useState({
     show: false,
     msg: '',
@@ -88,17 +87,13 @@ const ui = {
     },
   };
 
-function login(userObj) {
-setUser(userObj)
-}
 function logout() {
 setUser(null)
 }
 
+
 const authCtx = {
 user,
-isLoading,
-login,
 isLoggedIn,
 logout,
 notice,

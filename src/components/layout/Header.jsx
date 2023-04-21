@@ -1,9 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useAuthCtx } from '../../store/AuthProvider'
+import Logout from '../../auth/Logout'
 
 function Header() {
-const { isLoggedIn, logout } = useAuthCtx()
+const { isLoggedIn } = useAuthCtx()
 
   return (
     <div className='container'>
@@ -23,8 +24,10 @@ Shops
     {isLoggedIn &&  <NavLink to={'/add'}>
 Add shop
     </NavLink>}
+    <NavLink to={'/login'}>
+        <Logout/>
+    </NavLink>
 </nav>
-{isLoggedIn && <button onClick={logout}>Logout</button>}
     </div>
   )
 }

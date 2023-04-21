@@ -2,6 +2,7 @@ import React from 'react'
 import RegisterForm from '../auth/RegisterForm'
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase/firebase';
+import { Navigate } from 'react-router-dom';
 
 function RegisterPage() {
 
@@ -13,6 +14,7 @@ createUserWithEmailAndPassword(auth, email, password)
     // Signed in 
     const user = userCredential.user;
     // ...
+    Navigate('/shops')
   })
   .catch((error) => {
     const errorCode = error.code;
