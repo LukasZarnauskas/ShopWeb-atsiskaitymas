@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useAuthCtx } from '../../store/AuthProvider'
-import Logout from '../../auth/Logout'
+import Logout from '../../components/auth/Logout'
 
 function Header() {
 const { isLoggedIn } = useAuthCtx()

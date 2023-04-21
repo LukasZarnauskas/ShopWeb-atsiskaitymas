@@ -1,13 +1,13 @@
 import React from 'react'
-import LoginForm from '../auth/LoginForm'
+import LoginForm from '../components/auth/LoginForm'
 import { auth } from '../firebase/firebase';
 import {signInWithEmailAndPassword } from "firebase/auth";
 import { useAuthCtx } from '../store/AuthProvider';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
-
-const {login, ui} = useAuthCtx()
+const navigate = useNavigate();
+const { ui} = useAuthCtx()
 
 function userLoginFire({email, password}){
   signInWithEmailAndPassword(auth, email, password)
@@ -16,15 +16,13 @@ function userLoginFire({email, password}){
       const user = userCredential.user;
       // ...
       console.log('pavyko', user);
-      login(user)
-      console.log(user);
-      ui.showSuccess()
-      Navigate('/shops')
+      ui.showSuccess('Welcome')
+      navigate('/shops')
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      ui.showError()
+      ui.showError('Wrong email or password')
     });
 
 }
