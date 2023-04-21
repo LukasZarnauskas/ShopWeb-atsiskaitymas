@@ -33,7 +33,7 @@ useEffect(() => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       
-      const uid = user.uid;
+      const uid = user.uid
       
       console.log('prisijungimas', user.email);
       setUser(user);
@@ -49,6 +49,19 @@ useEffect(() => {
   });
 }, []);
 
+const { show, msg } = notice;
+  useEffect(() => {
+    if (show === true && msg !== 'Loading') {
+      setTimeout(() => {
+        setNotice({
+          show: false,
+          msg: '',
+          type: '',
+        });
+      }, 3000);
+    }
+  }, [show, msg]);
+
 const isLoggedIn = !!user;
 
 const ui = {
@@ -59,7 +72,20 @@ const ui = {
         type: 'success',
       });
     },
-  
+    showError() {
+      setNotice({
+        show: true,
+        msg: 'Klaida',
+        type: 'error',
+      });
+    },
+    closeAlert() {
+      setNotice({
+        show: false,
+        msg: '',
+        type: '',
+      });
+    },
   };
 
 function login(userObj) {
