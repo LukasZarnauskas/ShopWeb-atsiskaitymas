@@ -1,5 +1,5 @@
 import React from 'react'
-import RegisterForm from '../auth/RegisterForm'
+import RegisterForm from '../components/auth/RegisterForm'
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase/firebase';
 import { Navigate } from 'react-router-dom';

@@ -1,5 +1,5 @@
 import React from 'react'
-import LoginForm from '../auth/LoginForm'
+import LoginForm from '../components/auth/LoginForm'
 import { auth } from '../firebase/firebase';
 import {signInWithEmailAndPassword } from "firebase/auth";
 import { useAuthCtx } from '../store/AuthProvider';
