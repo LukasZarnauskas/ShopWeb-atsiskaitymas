@@ -64,17 +64,17 @@ const { show, msg } = notice;
 const isLoggedIn = !!user;
 
 const ui = {
-    showSuccess() {
+    showSuccess(msg = '') {
       setNotice({
         show: true,
-        msg: 'Success',
+        msg: msg || 'Success',
         type: 'success',
       });
     },
-    showError() {
+    showError(msg = '') {
       setNotice({
         show: true,
-        msg: 'Klaida',
+        msg: msg || 'Klaida',
         type: 'error',
       });
     },
