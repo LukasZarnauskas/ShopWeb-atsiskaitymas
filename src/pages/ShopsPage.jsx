@@ -1,6 +1,8 @@
 import { collection, getDocs } from "firebase/firestore"; 
 import { db } from "../firebase/firebase";
 import { useEffect, useState } from "react";
+import SingleShop from "../components/shop/singleShop";
+
 
 
 
@@ -30,9 +32,7 @@ console.log(shopsArr);
   return (
     <div>
       <h1>Shops page</h1>
-      <ul>
-        {shopsArr.map((sObj) => <li key={sObj.uid}>{sObj.name}</li>) }
-      </ul>
+      {shopsArr.map((sObj) => <SingleShop key={sObj.uid} item={sObj}/> )}
     </div>
   )
 }
