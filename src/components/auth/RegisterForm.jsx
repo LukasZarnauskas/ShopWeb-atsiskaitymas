@@ -36,7 +36,7 @@ function RegisterForm({onRegister}) {
         <label htmlFor="password">Password:</label>
         <input id='password' name='password' type="password" placeholder='password' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.password} />
         {formik.touched.password && formik.errors.password && <p> {formik.errors.password} </p> }
-   <button type='submit'>Login</button>
+   <button type='submit'>Register</button>
     
     </form>
   )

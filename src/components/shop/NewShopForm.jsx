@@ -1,8 +1,10 @@
 import { useFormik } from 'formik'
 import React from 'react'
 import * as Yup from 'yup'
+import {useAuthCtx} from '../../store/AuthProvider'
 
 function NewShopForm({onAdd}) {
+    const { user } = useAuthCtx()
     const formik = useFormik({
         initialValues: {
             name:'',
@@ -10,6 +12,7 @@ function NewShopForm({onAdd}) {
             year:0,
             description: '',
             imgUrl: '',
+            userUid: user?.uid || '',
         },
         validationSchema: Yup.object({
         name: Yup.string()

@@ -7,7 +7,7 @@ function SingleShop({item}) {
   <p>Town: {item.town}</p>
   <p>Start year: {item.year}</p>
   <p>Description: {item.description}</p>
-  <img src={item.img_url} alt="shopPicture" />
+  <img src={item.imgUrl} alt="shopPicture" />
 </li>
     </ul>
   )
