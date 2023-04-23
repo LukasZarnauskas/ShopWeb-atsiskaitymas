@@ -12,7 +12,7 @@ const { isLoggedIn } = useAuthCtx()
     <NavLink to={'/'}>
 Logo
     </NavLink>
-   {!isLoggedIn &&  <NavLink to={'/login'}>
+   {!isLoggedIn &&  <NavLink to={'/'}>
 Login
     </NavLink>}
     {!isLoggedIn &&  <NavLink to={'/register'}>
@@ -24,7 +24,7 @@ Shops
     {isLoggedIn &&  <NavLink to={'/add'}>
 Add shop
     </NavLink>}
-    <NavLink to={'/login'}>
+    <NavLink to={'/'}>
         <Logout/>
     </NavLink>
 </nav>

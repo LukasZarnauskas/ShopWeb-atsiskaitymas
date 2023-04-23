@@ -15,8 +15,8 @@ function userLoginFire({email, password}){
       // Signed in 
       const user = userCredential.user;
       // ...
-      console.log('pavyko', user);
-      ui.showSuccess('Welcome')
+      // console.log('pavyko', user);
+      ui.showSuccess('Welcome !')
       navigate('/shops')
     })
     .catch((error) => {

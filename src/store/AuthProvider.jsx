@@ -32,7 +32,7 @@ useEffect(() => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       
-      const uid = user.uid
+      
       
       console.log('prisijungimas', user.email);
       setUser(user);
@@ -74,8 +74,15 @@ const ui = {
     showError(msg = '') {
       setNotice({
         show: true,
-        msg: msg || 'Klaida',
+        msg: msg || 'Error',
         type: 'error',
+      });
+    },
+    showLoading(msg = '') {
+      setNotice({
+        show: true,
+        msg: msg || 'Loading',
+        type: 'loading',
       });
     },
     closeAlert() {
@@ -98,6 +105,7 @@ isLoggedIn,
 logout,
 notice,
 ui,
+
 }
 
 

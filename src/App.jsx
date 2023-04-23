@@ -1,6 +1,6 @@
 import './styles/reset.css'
 import './styles/App.css'
-import { Route, Routes } from "react-router-dom"
+import { Navigate, Route, Routes } from "react-router-dom"
 import LoginPage from "./pages/LoginPage"
 import RegisterPage from "./pages/RegisterPage"
 import ShopsPage from "./pages/ShopsPage"
@@ -8,20 +8,23 @@ import AddShopPage from "./pages/AddShopPage"
 import Header from "./components/layout/Header"
 import HomePage from './pages/HomePage'
 import Notice from './components/ui/notice/Notice'
+import { useAuthCtx } from './store/AuthProvider'
 
 
 function App() {
+
+  const {isLoggedIn} = useAuthCtx()
+
   return (
     <div>
       <Header/>
       <Notice/>
     <h1>Shop project</h1>
     <Routes>
-<Route path="/" element={<HomePage/>} />
-<Route path="/login" element={<LoginPage/>} />
-<Route path="/register" element={<RegisterPage />} />
-<Route path="/shops" element={<ShopsPage />} />
-<Route path="/add" element={<AddShopPage />} />
+<Route path="/" element={ isLoggedIn ? <Navigate to={'/shops'}/> : <LoginPage/>} />
+<Route path="/register" element={isLoggedIn ? <Navigate to={'/shops'}/> : <RegisterPage />} />
+<Route path="/shops" element={isLoggedIn ? <ShopsPage /> : <Navigate to={'/'} /> } />
+<Route path="/add" element={isLoggedIn ? <AddShopPage /> : <Navigate to={'/'} />} />
   </Routes>
     </div>
   )
