@@ -16,8 +16,8 @@ function App() {
 
   return (
     <div className='font-inter' >
-      <Header/>
-      <Notice/>
+      <Header />
+      <Notice  />
     <Routes>
 <Route path="/" element={ isLoggedIn ? <Navigate to={'/shops'}/> : <LoginPage/>} />
 <Route path="/register" element={isLoggedIn ? <Navigate to={'/shops'}/> : <RegisterPage />} />

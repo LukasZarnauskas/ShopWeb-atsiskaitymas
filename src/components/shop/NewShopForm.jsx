@@ -42,13 +42,9 @@ function NewShopForm({onAdd}) {
         }
 
     })
-    // • shopName: input - (stringas, minimum 4 simboliai, privalomas laukas )
-    // • town: input - (stringas, minimum 4 simboliai, privalomas laukas )
-    // • startYear: input (skaicius, 4 simboliai, min 1970, max 2022, privalomas laukas)
-    // • description: textarea - (stringas, mažiausiai 6 simboliai privalomas laukas)
-    // • ImageUrl: input (stringas, min 5, privalomas)
+    
     return (
-        <form onSubmit={formik.handleSubmit} class="max-w-4xl mx-auto p-4">
+        <form onSubmit={formik.handleSubmit} className="max-w-4xl mx-auto p-4">
           <label className='text-2xl text-gray-500' htmlFor="name">Shop name:</label>
           <input className='w-full' id='name' name='name' placeholder='Shop name' type="text" onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.name} />
           {formik.touched.name && formik.errors.name && <ValidMsg text={formik.errors.name}/> }
@@ -62,7 +58,7 @@ function NewShopForm({onAdd}) {
           {formik.touched.year && formik.errors.year && <ValidMsg text={formik.errors.year}/> }
         
           <label className='text-2xl text-gray-500' htmlFor="description">Description:</label>
-          <textarea className="w-full max-w-full h-20" id='description' name='description' placeholder='Description' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.description} />
+          <input className="w-full max-w-full h-20" id='description' name='description' placeholder='Description' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.description} />
           {formik.touched.description && formik.errors.description && <ValidMsg text={formik.errors.description}/> }
         
           <label className='text-2xl text-gray-500' htmlFor="imgUrl">Image Url:</label>

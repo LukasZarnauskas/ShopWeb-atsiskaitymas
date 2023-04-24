@@ -93,3 +93,15 @@ button {
   list-style: none;
   padding-left: 0;
 }
+
+.success {
+  background-color: #4caf50;
+}
+
+.error {
+  background-color: #f44336;
+}
+
+.loading {
+  background-color: #cfc91f;
+}
