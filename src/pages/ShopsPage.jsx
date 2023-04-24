@@ -32,9 +32,9 @@ ui.closeAlert()
 console.log(shopsArr);
 
   return (
-    <div className="flex flex-col justify-center items-center mt-20">
+    <div className="flex flex-col justify-center items-center mt-20 ">
       <h1 className="text-3xl font-bold mb-6">Shops page</h1>
-     <ul>
+     <ul className="lg:grid lg:grid-cols-3 lg:gap-4">
       {shopsArr.map((sObj) => <SingleShop key={sObj.uid} item={sObj}/> )}
     </ul>
     </div>

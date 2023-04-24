@@ -9,7 +9,8 @@ function SingleShop({item}) {
   <p className="text-base"><strong  >Start year</strong> </p>
   <p className="text-base">{item.year}</p>
   <p className="text-base"><strong >Description</strong> </p>
-  <img className="h-150 w-200 object-cover mt-3" src={item.imgUrl} alt="shopPicture" />
+  <p className="text-base text-center">{item.description}</p>
+  <img className="h-64 w-64 object-cover mt-3" src={item.imgUrl} alt="shopPicture" />
 </li>
    
   )
