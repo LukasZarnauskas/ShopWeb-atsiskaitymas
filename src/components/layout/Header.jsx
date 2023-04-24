@@ -12,7 +12,7 @@ console.log(open);
 
     <header className=''>
    <div className='m-4 flex justify-between items-center border-b border-gray-100'>
-    <Link to={'/'}> <img className='mb-1' src="../../../public/img/58px.svg" alt="logo" /> </Link>
+    <Link to={'/'}> <div className='flex'> <img className='mb-1' src="../../../public/img/58px.svg" alt="logo" /> <h3 className='ml-2 hover:text-gray-500'>SHOPSWEB</h3></div></Link>
 <div className='flex items-center'>
 <nav className={`${open ? 'block' : 'hidden'} lg:block  flex`}>
     
