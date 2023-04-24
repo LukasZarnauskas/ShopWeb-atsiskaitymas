@@ -15,19 +15,19 @@ console.log(open);
 <div className='flex items-center'>
 <nav className={`${open ? 'block' : 'hidden'} flex`}>
     
-   {!isLoggedIn &&  <NavLink to={'/'} className='mr-4 font-bold font-'>
+   {!isLoggedIn &&  <NavLink to={'/'} className='mr-2 font-bold '>
 Login
     </NavLink>}
-    {!isLoggedIn &&  <NavLink to={'/register'} className='mr-4 font-bold '>
+    {!isLoggedIn &&  <NavLink to={'/register'} className='mr-2 font-bold '>
 Register
     </NavLink>}
-    {isLoggedIn &&  <NavLink to={'/shops'} className='mr-4 font-bold '>
+    {isLoggedIn &&  <NavLink to={'/shops'} className='mr-2 font-bold '>
 Shops
     </NavLink>}
-    {isLoggedIn &&  <NavLink to={'/add'} className='mr-4 font-bold '>
+    {isLoggedIn &&  <NavLink to={'/add'} className='mr-2 font-bold '>
 Add shop
     </NavLink>}
-    <NavLink to={'/'} className='mr-4'>
+    <NavLink to={'/'} className='mr-2'>
         <Logout/>
     </NavLink>
     

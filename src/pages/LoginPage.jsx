@@ -33,7 +33,7 @@ function userLoginFire({email, password}){
 return (
   <div className="flex flex-col justify-center items-center mt-20">
    <Hero/>
-    <h2 className="text-2xl font-bold mb-8">Login</h2>
+    <h2 className="text-3xl font-bold mb-8">Login</h2>
       <LoginForm onLogin={userLoginFire}/>
   </div>
 )
