@@ -4,7 +4,7 @@
 
 html {
   /* 1 rem = 10px */
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -92,4 +92,16 @@ button {
 .unlisted {
   list-style: none;
   padding-left: 0;
+}
+
+.success {
+  background-color: #4caf50;
+}
+
+.error {
+  background-color: #f44336;
+}
+
+.loading {
+  background-color: #cfc91f;
 }
