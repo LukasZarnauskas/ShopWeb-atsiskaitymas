@@ -2,6 +2,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { useEffect, useState } from "react";
 import SingleShop from "../components/shop/singleShop";
+import { useAuthCtx } from "../store/AuthProvider";
 
 
 
@@ -9,10 +10,10 @@ import SingleShop from "../components/shop/singleShop";
 function ShopsPage() {
   
 const [shopsArr, setShopsArr] = useState([])
-
+const {ui} = useAuthCtx()
 useEffect(() => {
   async function getShop(){
-
+ui.showLoading('Loading...')
 const querySnapshot = await getDocs(collection(db, "shops"));
 const tempShops = [];
 
@@ -24,6 +25,7 @@ querySnapshot.forEach((doc) => {
  })
 });
 setShopsArr(tempShops)
+ui.closeAlert()
   }
   getShop()
 }, [])
