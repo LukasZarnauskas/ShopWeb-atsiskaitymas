@@ -8,6 +8,7 @@ import AddShopPage from "./pages/AddShopPage"
 import Header from "./components/layout/Header"
 import Notice from './components/ui/notice/Notice'
 import { useAuthCtx } from './store/AuthProvider'
+import Footer from './components/layout/Footer'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
 <Route path="/shops" element={isLoggedIn ? <ShopsPage /> : <Navigate to={'/'} /> } />
 <Route path="/add" element={isLoggedIn ? <AddShopPage /> : <Navigate to={'/'} />} />
   </Routes>
+  <Footer/>
     </div>
   )
 }
