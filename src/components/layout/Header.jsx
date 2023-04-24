@@ -14,7 +14,7 @@ console.log(open);
    <div className='m-4 flex justify-between items-center border-b border-gray-100'>
     <Link to={'/'}> <img className='mb-1' src="../../../public/img/58px.svg" alt="logo" /> </Link>
 <div className='flex items-center'>
-<nav className={`max-lg:${open ? 'block' : 'hidden'}  flex`}>
+<nav className={`${open ? 'block' : 'hidden'} lg:block  flex`}>
     
    {!isLoggedIn &&  <NavLink to={'/'} className='mr-2 font-bold px-1 text-lg '>
 Login
