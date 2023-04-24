@@ -29,12 +29,14 @@ function userLoginFire({email, password}){
   
 
 
-  return (
-    <div>
-        <h1>Login</h1>
-        <LoginForm onLogin={userLoginFire}/>
+return (
+  <div className="flex flex-col justify-center items-center min-h-screen">
+    <h1 className="text-3xl font-bold mb-8">Login</h1>
+    <div className="bg-white rounded-lg shadow-2xl p-6">
+      <LoginForm onLogin={userLoginFire}/>
     </div>
-  )
+  </div>
+)
 }
 
 export default LoginPage

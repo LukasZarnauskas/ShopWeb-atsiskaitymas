@@ -15,7 +15,7 @@ function App() {
   const {isLoggedIn} = useAuthCtx()
 
   return (
-    <div className=''>
+    <div className='font-inter' >
       <Header/>
       <Notice/>
     <h1>Shop project</h1>
