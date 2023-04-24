@@ -18,7 +18,6 @@ function App() {
     <div className='font-inter' >
       <Header/>
       <Notice/>
-    <h1>Shop project</h1>
     <Routes>
 <Route path="/" element={ isLoggedIn ? <Navigate to={'/shops'}/> : <LoginPage/>} />
 <Route path="/register" element={isLoggedIn ? <Navigate to={'/shops'}/> : <RegisterPage />} />
