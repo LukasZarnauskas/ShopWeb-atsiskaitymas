@@ -6,7 +6,6 @@ import RegisterPage from "./pages/RegisterPage"
 import ShopsPage from "./pages/ShopsPage"
 import AddShopPage from "./pages/AddShopPage"
 import Header from "./components/layout/Header"
-import HomePage from './pages/HomePage'
 import Notice from './components/ui/notice/Notice'
 import { useAuthCtx } from './store/AuthProvider'
 
@@ -16,7 +15,7 @@ function App() {
   const {isLoggedIn} = useAuthCtx()
 
   return (
-    <div>
+    <div className=''>
       <Header/>
       <Notice/>
     <h1>Shop project</h1>
