@@ -9,7 +9,7 @@ function AddShopPage() {
 const {ui} = useAuthCtx()
 async function createShopFire(newShopObj){
   
-  ui.showLoading()
+  ui.showLoading('Loading...')
 try {
   const docRef = await addDoc(collection(db, "shops"), newShopObj);
 

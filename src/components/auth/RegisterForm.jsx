@@ -33,11 +33,11 @@ function RegisterForm({onRegister}) {
 
 <form onSubmit={formik.handleSubmit}>
  
-        <label htmlFor="email">Email:</label>
+        <label className='text-2xl text-gray-500' htmlFor="email">Email:</label>
         <input id='email' name='email' type="text" placeholder='Email' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.email} />
         {formik.touched.email && formik.errors.email && <ValidMsg text={formik.errors.email}/> }
-        <label htmlFor="password">Password:</label>
-        <input id='password' name='password' type="password" placeholder='password' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.password} />
+        <label className='text-2xl text-gray-500' htmlFor="password">Password:</label>
+        <input  id='password' name='password' type="password" placeholder='password' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.password} />
         {formik.touched.password && formik.errors.password && <ValidMsg text={formik.errors.password}/> }
    <Button type={'submit'} >Register</Button>
     

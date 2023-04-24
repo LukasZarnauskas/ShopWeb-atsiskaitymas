@@ -54,7 +54,7 @@ return (
    <Hero/>
     <h2 className="text-3xl font-bold mb-6">Login</h2>
       <LoginForm onLogin={userLoginFire} />
-      <Button onClick={loginWithGoogle}> Login with Google</Button>
+      <button className='bg-teal-500 text-white text-xl font-bold border-none cursor-pointer py-3 px-6 hover:bg-teal-700 mt-3' onClick={loginWithGoogle}> Login with Google</button>
   </div>
 )
 }

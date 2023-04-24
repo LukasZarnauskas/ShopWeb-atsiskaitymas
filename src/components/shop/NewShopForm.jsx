@@ -46,23 +46,23 @@ function NewShopForm({onAdd}) {
     return (
         <form onSubmit={formik.handleSubmit} className="max-w-4xl mx-auto p-4">
           <label className='text-2xl text-gray-500' htmlFor="name">Shop name:</label>
-          <input className='w-full' id='name' name='name' placeholder='Shop name' type="text" onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.name} />
+          <input className='w-full' id='name' name='name' placeholder='Shop name' type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.name} />
           {formik.touched.name && formik.errors.name && <ValidMsg text={formik.errors.name}/> }
         
           <label className='text-2xl text-gray-500' htmlFor="town">Town:</label>
-          <input className='w-full' id='town' name='town' type="text" placeholder='Town' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.town} />
+          <input className='w-full' id='town' name='town' type="text" placeholder='Town' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.town} />
           {formik.touched.town && formik.errors.town && <ValidMsg text={formik.errors.town}/> }
         
           <label className='text-2xl text-gray-500' htmlFor="year">Start year:</label>
-          <input className='w-full' id='year' name='year' type="number" placeholder='Start year' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.year} />
+          <input className='w-full' id='year' name='year' type="number" placeholder='Start year' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.year} />
           {formik.touched.year && formik.errors.year && <ValidMsg text={formik.errors.year}/> }
         
           <label className='text-2xl text-gray-500' htmlFor="description">Description:</label>
-          <input className="w-full max-w-full h-20" id='description' name='description' placeholder='Description' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.description} />
+          <input className="w-full max-w-full h-20" id='description' name='description' placeholder='Description' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.description} />
           {formik.touched.description && formik.errors.description && <ValidMsg text={formik.errors.description}/> }
         
           <label className='text-2xl text-gray-500' htmlFor="imgUrl">Image Url:</label>
-          <input className='w-full' id='imgUrl' name='imgUrl' type="text" placeholder='Image Url' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.imgUrl} />
+          <input className='w-full' id='imgUrl' name='imgUrl' type="text" placeholder='Image Url' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.imgUrl} />
           {formik.touched.imgUrl && formik.errors.imgUrl && <ValidMsg text={formik.errors.imgUrl}/> }
           <Button type="submit">Add shop</Button>
         </form>
