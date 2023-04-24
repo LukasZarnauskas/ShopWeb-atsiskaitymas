@@ -1,15 +1,17 @@
 
 function SingleShop({item}) {
   return (
-    <ul>
-<li>
-  <h2>{item.name}</h2>
-  <p>Town: {item.town}</p>
-  <p>Start year: {item.year}</p>
-  <p>Description: {item.description}</p>
-  <img src={item.imgUrl} alt="shopPicture" />
+    
+<li className="flex flex-col justify-center items-center bg-gray-200 rounded-2xl my-4 py-4 max-w-proses mx-3 max-w-sm" >
+  <h2 className="text-xl font-bold">{item.name}</h2>
+  <p className="text-base"><strong  >Town</strong> </p>
+  <p className="text-base">{item.town}</p>
+  <p className="text-base"><strong  >Start year</strong> </p>
+  <p className="text-base">{item.year}</p>
+  <p className="text-base"><strong >Description</strong> </p>
+  <img className="h-150 w-200 object-cover mt-3" src={item.imgUrl} alt="shopPicture" />
 </li>
-    </ul>
+   
   )
 }
 
