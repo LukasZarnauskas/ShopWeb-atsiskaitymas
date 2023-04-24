@@ -2,7 +2,9 @@ import { useFormik } from 'formik'
 import React from 'react'
 import * as Yup from 'yup'
 import {useAuthCtx} from '../../store/AuthProvider'
-
+import ValidMsg from '../ui/ValidMsg'
+import Button from '../ui/Button'
+ 
 function NewShopForm({onAdd}) {
     const { user } = useAuthCtx()
     const formik = useFormik({
@@ -45,32 +47,33 @@ function NewShopForm({onAdd}) {
     // • startYear: input (skaicius, 4 simboliai, min 1970, max 2022, privalomas laukas)
     // • description: textarea - (stringas, mažiausiai 6 simboliai privalomas laukas)
     // • ImageUrl: input (stringas, min 5, privalomas)
-  return (
-      <form onSubmit={formik.handleSubmit}>
-        <label htmlFor="name">Shop name:</label>
-        <input id='name' name='name' placeholder='Shop name' type="text" onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.name} />
-        {formik.touched.name && formik.errors.name && <p> {formik.errors.name} </p> }
-
-        <label htmlFor="town">Town:</label>
-        <input id='town' name='town' type="text" placeholder='Town' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.town} />
-        {formik.touched.town && formik.errors.town && <p> {formik.errors.town} </p> }
-
-        <label htmlFor="year">Start year:</label>
-        <input id='year' name='year' type="number" placeholder='Start year' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.year} />
-        {formik.touched.year && formik.errors.year && <p> {formik.errors.year} </p> }
-
-        <label htmlFor="description">Description:</label>
-        <textarea id='description' name='description' placeholder='Description' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.description} />
-{formik.touched.description && formik.errors.description && <p> {formik.errors.description} </p> }
-
-
-        <label htmlFor="imgUrl">Image Url:</label>
-        <input id='imgUrl' name='imgUrl' type="text" placeholder='Image Url' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.imgUrl} />
-        {formik.touched.imgUrl && formik.errors.imgUrl && <p> {formik.errors.imgUrl} </p> }
-        <button type="submit">Add shop</button>
+    return (
+        <form onSubmit={formik.handleSubmit} class="max-w-4xl mx-auto p-4">
+          <label className='text-2xl text-gray-500' htmlFor="name">Shop name:</label>
+          <input className='w-full' id='name' name='name' placeholder='Shop name' type="text" onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.name} />
+          {formik.touched.name && formik.errors.name && <ValidMsg text={formik.errors.name}/> }
         
-    </form>
-  )
+          <label className='text-2xl text-gray-500' htmlFor="town">Town:</label>
+          <input className='w-full' id='town' name='town' type="text" placeholder='Town' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.town} />
+          {formik.touched.town && formik.errors.town && <ValidMsg text={formik.errors.town}/> }
+        
+          <label className='text-2xl text-gray-500' htmlFor="year">Start year:</label>
+          <input className='w-full' id='year' name='year' type="number" placeholder='Start year' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.year} />
+          {formik.touched.year && formik.errors.year && <ValidMsg text={formik.errors.year}/> }
+        
+          <label className='text-2xl text-gray-500' htmlFor="description">Description:</label>
+          <textarea className="w-full max-w-full h-20" id='description' name='description' placeholder='Description' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.description} />
+          {formik.touched.description && formik.errors.description && <ValidMsg text={formik.errors.description}/> }
+        
+          <label className='text-2xl text-gray-500' htmlFor="imgUrl">Image Url:</label>
+          <input className='w-full' id='imgUrl' name='imgUrl' type="text" placeholder='Image Url' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.imgUrl} />
+          {formik.touched.imgUrl && formik.errors.imgUrl && <ValidMsg text={formik.errors.imgUrl}/> }
+          <Button type="submit">Add shop</Button>
+        </form>
+      );
+      
+  
+  
 }
 
 export default NewShopForm

@@ -21,8 +21,8 @@ try {
 }
 }
   return (
-    <div>
-      <h1>Add shop</h1>
+    <div className="flex flex-col justify-center items-center mt-20">
+      <h1 className="text-3xl font-bold mb-6">Add shop</h1>
       <NewShopForm onAdd={createShopFire}/>
     </div>
   )
