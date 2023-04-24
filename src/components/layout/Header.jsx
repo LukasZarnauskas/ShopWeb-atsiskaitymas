@@ -9,30 +9,32 @@ const { isLoggedIn } = useAuthCtx()
 const [open, setOpen] = useState(false)
 console.log(open);
   return (
-    <header className='m-4 flex justify-between items-center'><Link to={'/'}>
-<img src="../../../public/img/58px.svg" alt="logo" />
-    </Link>
+
+    <header className='bg-'>
+   <div className='m-4 flex justify-between items-center border-b border-gray-100'>
+    <Link to={'/'}> <img src="../../../public/img/58px.svg" alt="logo" /> </Link>
 <div className='flex items-center'>
 <nav className={`${open ? 'block' : 'hidden'} flex`}>
     
-   {!isLoggedIn &&  <NavLink to={'/'} className='mr-2 font-bold '>
+   {!isLoggedIn &&  <NavLink to={'/'} className='mr-2 font-bold px-1 text-lg '>
 Login
     </NavLink>}
-    {!isLoggedIn &&  <NavLink to={'/register'} className='mr-2 font-bold '>
+    {!isLoggedIn &&  <NavLink to={'/register'} className='mr-2 font-bold px-1 text-lg'>
 Register
     </NavLink>}
-    {isLoggedIn &&  <NavLink to={'/shops'} className='mr-2 font-bold '>
+    {isLoggedIn &&  <NavLink to={'/shops'} className='mr-2 font-bold px-1 text-lg'>
 Shops
     </NavLink>}
-    {isLoggedIn &&  <NavLink to={'/add'} className='mr-2 font-bold '>
+    {isLoggedIn &&  <NavLink to={'/add'} className='mr-2 font-bold px-1 text-lg'>
 Add shop
     </NavLink>}
-    <NavLink to={'/'} className='mr-2'>
+    {isLoggedIn && <NavLink to={'/'} className='mr-2 font-bold px-1 text-lg'>
         <Logout/>
-    </NavLink>
+    </NavLink> }
     
 </nav>
-    <FiMenu className=' block h-16 w-10 cursor-pointer' onClick={() => setOpen(!open)}/>
+    <FiMenu className=' block h-16 w-10 cursor-pointer text-gray-500 ' onClick={() => setOpen(!open)}/>
+    </div>
     </div>
     </header>
   )

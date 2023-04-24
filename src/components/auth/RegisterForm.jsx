@@ -1,6 +1,8 @@
 import { useFormik } from 'formik'
 import React from 'react'
 import * as Yup from 'yup'
+import ValidMsg from '../ui/ValidMsg'
+import Button from '../ui/Button'
 
 function RegisterForm({onRegister}) {
 
@@ -30,13 +32,14 @@ function RegisterForm({onRegister}) {
   return (
 
 <form onSubmit={formik.handleSubmit}>
+ 
         <label htmlFor="email">Email:</label>
         <input id='email' name='email' type="text" placeholder='Email' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.email} />
-        {formik.touched.email && formik.errors.email && <p> {formik.errors.email} </p> }
+        {formik.touched.email && formik.errors.email && <ValidMsg text={formik.errors.email}/> }
         <label htmlFor="password">Password:</label>
         <input id='password' name='password' type="password" placeholder='password' onChange={formik.handleChange} onBlur={formik.handleChange} value={formik.values.password} />
-        {formik.touched.password && formik.errors.password && <p> {formik.errors.password} </p> }
-   <button type='submit'>Register</button>
+        {formik.touched.password && formik.errors.password && <ValidMsg text={formik.errors.password}/> }
+   <Button type={'submit'} >Register</Button>
     
     </form>
   )
