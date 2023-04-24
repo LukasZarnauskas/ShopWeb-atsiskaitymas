@@ -7,7 +7,7 @@ import Logout from '../../components/auth/Logout'
 function Header() {
 const { isLoggedIn } = useAuthCtx()
 const [open, setOpen] = useState(false)
-console.log(open);
+
   return (
 
     <header className=''>
