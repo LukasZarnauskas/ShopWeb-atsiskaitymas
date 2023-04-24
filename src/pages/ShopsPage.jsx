@@ -29,7 +29,7 @@ ui.closeAlert()
   }
   getShop()
 }, [])
-console.log(shopsArr);
+// console.log(shopsArr);
 
   return (
     <div className="flex flex-col justify-center items-center mt-20 ">

@@ -37,7 +37,7 @@ function NewShopForm({onAdd}) {
             .required('Field required'),
         }),
         onSubmit:(values)=> {
-            console.log(values);
+            // console.log(values);
             onAdd(values)
         }
 

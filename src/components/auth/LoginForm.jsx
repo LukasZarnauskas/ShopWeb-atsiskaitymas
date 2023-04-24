@@ -18,7 +18,7 @@ validationSchema: Yup.object({
     .required('Insert password'),
 }),
 onSubmit:(values)=> {
-    console.log(values);
+    // console.log(values);
     onLogin(values)
 }
 

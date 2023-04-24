@@ -13,10 +13,10 @@ async function createShopFire(newShopObj){
 try {
   const docRef = await addDoc(collection(db, "shops"), newShopObj);
 
-  console.log("Document written with ID: ", docRef.id);
+  // console.log("Document written with ID: ", docRef.id);
   ui.showSuccess('Shop is successfully added')
 } catch (e) {
-  console.error("Error adding document: ", e);
+  // console.error("Error adding document: ", e);
   ui.showError('Something is wrong')
 }
 }
