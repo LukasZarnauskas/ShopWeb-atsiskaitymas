@@ -15,7 +15,7 @@ function Header() {
           {' '}
           <div className="flex">
             {' '}
-            <img className="mb-1" src="src/img/58px.svg" alt="logo" />{' '}
+            <img className="mb-1" src="img/58px.svg" alt="logo" />{' '}
             <h3 className="ml-2 hover:text-gray-500 hidden lg:block">
               SHOPSWEB
             </h3>
