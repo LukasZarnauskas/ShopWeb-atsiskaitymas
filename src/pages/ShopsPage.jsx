@@ -1,7 +1,7 @@
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 import { useEffect, useState } from 'react';
-import SingleShop from '../components/shop/singleShop';
+import SingleShop from '../components/shop/SingleShop';
 import { useAuthCtx } from '../store/AuthProvider';
 
 function ShopsPage() {
